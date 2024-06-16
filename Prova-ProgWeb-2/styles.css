@@ -1,0 +1,327 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+/* Reset de estilos para garantir consistência em diferentes navegadores */
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+header {
+    height: 130px;
+    background-color: #4682b4;
+    position: relative;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 25px;
+}
+
+#formulárioDeBusca {
+    width: 70%;
+    max-width: 100ch;
+    height: 40px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+}
+
+#barraDePesquisa {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    border: none;
+    text-indent: 1em;
+    border-radius: 5px;
+    font-size: 1em;
+    padding-right: 40px; /* Espaço para a lupa dentro do campo */
+}
+
+#lupa {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 40px;
+    border: none;
+    background-color: transparent;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#filtro {
+    color: white;
+    position: absolute;
+    top: 70%;
+    right: 15px;
+    transform: translate(-50%, -50%);
+}
+
+#spanFiltro {
+    font-family: monospace;
+    font-weight: bold;
+    position: absolute;
+    right: -8px;
+    top: 12px;
+    padding: 0px 3px;
+    background-color: #f0f0f0;
+    color: #4682b4;
+    border-radius: 50%;
+    width: 15.2px;
+    text-align: center;
+}
+
+main {
+    background-color: #f0f0f0;
+}
+
+#conteúdo {
+    width: 100%;
+    max-width: 100ch;
+    margin: auto;
+}
+
+img {
+    width: 350px;
+    margin-right: 15px;
+}
+
+#listaDeNoticias {
+    list-style-type: none;
+}
+
+li {
+    display: flex;
+    margin: 10px 0;
+}
+
+.botaoLeiaMais {
+    background-color: #dbdbdb;
+    width: 100%;
+    padding: 5px 0;
+    margin-top: 15px;
+    border-radius: 3px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s; /* Transição suave */
+}
+
+.botaoLeiaMais:hover {
+    background-color: #b6b6b7;
+    color: #f0f0f0;
+}
+
+hr {
+    border: 1px solid #dbdbdb;
+}
+
+p {
+    margin-top: 15px;
+}
+
+h2, p {
+    display: block;
+    width: 100%;
+}
+
+.infoAdicional {
+    display: flex;
+}
+
+.data {
+    text-align: right;
+}
+
+#dialog {
+    width: 500px;
+    border-radius: 10px;
+    padding: 40px;
+}
+
+#dialog form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.divDialog {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#dialog label {
+    font-size: 1.2em;
+}
+
+.filtros {
+    width: 200px;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    font-size: 1.2em;
+    display: block;
+    border: 2px solid #dadada;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+#dialog #closeButton {
+    width: auto;
+    margin: 0;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 4px;
+    right: 2px;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: large;
+}
+
+#dialog #applyFiltersButton {
+    background-color: #4682b4;
+    color: white;
+    padding: 5px;
+    margin-top: 30px;
+    border: none;
+}
+
+#dialog #resetFiltersButton {
+    background-color: #4682b4;
+    color: white;
+    padding: 5px;
+    margin-top: 30px;
+    border: none;
+}
+
+button, svg {
+    cursor: pointer;
+    border: none;
+}
+
+#paginacao {
+    height: auto;
+}
+
+#listaDePaginas {
+    display: flex;
+    justify-content: center;
+}
+
+#listaDePaginas button {
+    width: 40px;
+    height: 40px;
+    font-weight: bold;
+    color: #4682b4;
+    border: 2px solid #4682b4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0 5px;
+}
+
+#listaDePaginas button:hover, #listaDePaginas #paginaAtual {
+    color: #f0f0f0;
+    background-color: #4682b4;
+}
+
+#listaDePaginas #paginaAtual:hover {
+    color: #4682b4;
+    background-color: #f0f0f0;
+}
+
+footer {
+    background-color: #4682b4;
+    padding: 10px 0; 
+}
+
+footer p {
+    color: white;
+    text-align: center;
+    margin: 10px 0; 
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+@media screen and (max-width: 1000px) {
+    img {
+        width: 100%;
+    }
+
+    li {
+        flex-direction: column;
+    }
+
+    #conteúdo, #formulárioDeBusca {
+        width: 60%;
+    }
+
+    li h2 {
+        margin-top: 15px;
+    }
+
+    .introducao {
+        text-indent: 2em;
+    }
+}
+
+@media screen and (max-width: 760px){
+    #dialog form {
+        grid-template-columns: 1fr;
+    }   
+    .filtros {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    h1 {
+        margin-top: 2px;
+    }
+
+    #formulárioDeBusca {
+        top: 75%;
+        width: 75%;
+    }
+
+    #filtro {
+        top: 75%;
+    }
+
+    #conteúdo {
+        width: 90%;
+    }
+
+    #listaDePaginas button {
+        width: 28px;
+        height: 28px;
+        margin: 0 2px;
+    }
+
+    #listaDePaginas .setas {
+        display: none;
+    }
+}
